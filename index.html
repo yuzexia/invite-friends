@@ -21,13 +21,13 @@
                 <div class="row left">
                     <img src="./images/icons-01.png" alt="">
                     <div class="text">
-                        <span>The number of rewards of this month <i>100</i></span>
+                        <span>The number of rewards of this month <i></i></span>
                         <div class="line"></div>
                     </div>
                 </div>
                 <div class="row right">
                     <div class="text">
-                        <span>Total rewards <i>567</i></span>
+                        <span>Total rewards <i></i></span>
                         <div class="line"></div>
                     </div>
                     <img src="./images/icons-02.png" alt="">
@@ -35,13 +35,13 @@
                 <div class="row left">
                     <img src="./images/icons-03.png" alt="">
                     <div class="text">
-                        <span>The number of invitees of this month <i>15</i></span>
+                        <span>The number of invitees of this month <i></i></span>
                         <div class="line"></div>
                     </div>
                 </div>
                 <div class="row right">
                     <div class="text">
-                        <span>The total number of invitees <i>45</i></span>
+                        <span>The total number of invitees <i></i></span>
                         <div class="line"></div>
                     </div>
                     <a href="./record.html" class="more"></a>
@@ -51,17 +51,18 @@
             <div class="code">
                 <div class="title">My invitation code</div>
                 <div class="code-number">
-                    <span class="num">1</span>
-                    <span class="num">1</span>
-                    <span class="num">1</span>
-                    <span class="num">1</span>
-                    <span class="num">1</span>
-                    <span class="num">1</span>
-                    <a href="javascript:;" class="code-copy">Copy</a>
+                    <!-- <input type="hidden" id="inviteCode"> -->
+                    <span class="num">-</span>
+                    <span class="num">-</span>
+                    <span class="num">-</span>
+                    <span class="num">-</span>
+                    <span class="num">-</span>
+                    <span class="num">-</span>
+                    <a href="javascript:;" class="code-copy" id="codeCopy">Copy</a>
                 </div>
                 <div class="code-url">
-                    <input type="text" value="http://www.infinix.com/code=111111">
-                    <a href="javascript:;" class="url-copy">Copy</a>
+                    <input id="inviteUrl" type="text" value="http://www.baidu.com" readonly>
+                    <a href="javascript:;" class="url-copy" id="urlCopy" data-clipboard-target="#inviteUrl">Copy</a>
                 </div>
                 <div class="invite">Invite friends for registration</div>
             </div>
@@ -88,6 +89,7 @@
         </div>
     </header>
     <script src="./js/jquery.min.js"></script>
+    <script src="./js/clipboard.min.js"></script>
     <script src="./js/main.js"></script>
 </body>
 </html>
