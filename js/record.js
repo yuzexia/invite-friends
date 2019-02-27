@@ -6,8 +6,13 @@ $(document).ready(function() {
     var boxEle = $('#recordBox')
     var page = 1;
     var limit = 20;
+    // var uid = Transsion.getUserId();
     var uid = 47491;
+    // var host = Transsion.getBaseUrl();
+    var host = 'http://xclub.pre.transsion.net/';
     var recordData = [];
+    // app提示框
+    // Transsion.showToast('Incorrect email format');
     loadData(page);
     document.addEventListener('touchstart', function(e) {
         var touch = e.touches[0]
@@ -30,11 +35,9 @@ $(document).ready(function() {
         if (offsetY > 0) {
             // 向下滑动
             direction = 1;
-            console.log('向上滚动');
         } else {
             // 向上滑动
             direction = -1;
-            console.log('向下滚动');
         }
         return direction;
     }
@@ -45,7 +48,6 @@ $(document).ready(function() {
         var scrollHeight = $(document).height();
         // console.log(scrollTop,  viewH, scrollHeight)
         if (scrollTop + viewH >= scrollHeight && ajaxStatus){
-            console.log('应该加载了...');
             if (++page <= maxPage) {
                 loadData(page);
             } else {
@@ -57,7 +59,7 @@ $(document).ready(function() {
     // 获取邀请记录
     function loadData(page) {
         $.ajax({
-            url: 'http://xclub.pre.transsion.net/api/mobile/index.php?version=9&module=recommend_user_list&limit='+ limit +'&uid='+ uid +'&page='+ page,
+            url: host + 'api/mobile/index.php?version=9&module=recommend_user_list&limit='+ limit +'&uid='+ uid +'&page='+ page,
             type: 'get',
             dataType: 'json',
             beforeSend: function() {
@@ -76,7 +78,7 @@ $(document).ready(function() {
                         createHtml(recordData);
                     }
                 } else {
-                    alert('error:出错了。。。')
+                    Transsion.showToast('error:出错了。。。')
                 }
             },
             error: function(err) {

@@ -1,5 +1,8 @@
 $(document).ready(function() {
+    // var uid = Transsion.getUserId();
     var uid = 47491;
+    // var host = Transsion.getBaseUrl();
+    var host = 'http://xclub.pre.transsion.net/';
     // 统计数据元素
     var numberBox = $('.text i');
     // code元素
@@ -11,7 +14,7 @@ $(document).ready(function() {
     var urlCopy = $('#urlCopy');
     // 获取初始化信息
     $.ajax({
-        url: 'http://xclub.pre.transsion.net/api/mobile/index.php?version=9&module=recommend_user_statistics&uid='+ uid,
+        url: host + 'api/mobile/index.php?version=9&module=recommend_user_statistics&uid='+ uid,
         type: 'get',
         dataType: 'json',
         success: function(res) {
@@ -30,7 +33,7 @@ $(document).ready(function() {
                 invitUrlBox.val('http://www.infinix.com/code=' + code);
                 codeCopy.attr('data-clipboard-text', code)
             } else {
-                alert('error:::出错了。。。')
+                Transsion.showToast('error:::出错了。。。')
             }
         },
         error: function(err) {
@@ -42,17 +45,17 @@ $(document).ready(function() {
     // 复制code
     var codeClipboard = new ClipboardJS('#codeCopy');
     codeClipboard.on('success', function() {
-        console.log('复制成功...');
+        Transsion.showToast('复制成功...');
     })
     codeClipboard.on('error', function() {
-        console.log('复制失败...');
+        Transsion.showToast('复制失败...');
     })
     // 复制url
     var urlClipboard = new ClipboardJS('#urlCopy');
     urlClipboard.on('success', function() {
-        console.log('复制成功...');
+        Transsion.showToast('复制成功...');
     })
     urlClipboard.on('error', function() {
-        console.log('复制失败...');
+        Transsion.showToast('复制失败...');
     })
 })
