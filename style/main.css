@@ -4,14 +4,32 @@ html,body,div,a,p,span,img,li,ul,ol,h1,h2,h3,h4,h5,h6,i,em,strong,table,tbody,td
     -webkit-font-smoothing: antialiased;
 }
 
+/**
+* 字体
+*/
+@font-face {
+    font-family: 'Roboto-Regular';
+    /*这里是说明调用来的字体名字*/
+    src: url('../font/Roboto-Regular.ttf');
+    /*这里是字体文件路径*/
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Roboto-Regular';
+}
+
 a{
     text-decoration: none;
     color: inherit;
 }
 /* index.html start */
 .header-box{
+    padding-top: 15rem;
     width: 100%;
     height: auto;
+    background: #3b007f url('../images/bg-en.png') no-repeat;
+    background-size: 100% auto;
 }
 .header-box .banner{
     position: relative;
@@ -22,13 +40,7 @@ a{
     display: block;
 }
 .banner .title{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
+    padding: 4rem 0;
     width: 100%;
     font-size: 36px;
     text-align: center;
@@ -42,7 +54,7 @@ a{
 }
 
 .header-box .number{
-    background: linear-gradient(to bottom, #5300aa, #3e007f);
+    /* background: linear-gradient(to bottom, #5300aa, #3b007f); */
 }
 .number{
     padding-bottom: 40px;
@@ -135,6 +147,7 @@ a{
 /* code */
 .code{
     margin-top: 60px;
+    text-align: center;
     color: #fff;
 }
 .code .title{
@@ -223,7 +236,7 @@ a{
 /* rules */
 .rules{
     padding-bottom: 24px;
-    background: linear-gradient(to bottom, #3e007f, #5300aa)
+    /* background: linear-gradient(to bottom, #3e007f, #5300aa); */
 }
 .rules .title{
     margin: 0 auto;

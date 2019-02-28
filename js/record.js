@@ -35,9 +35,11 @@ $(document).ready(function() {
         if (offsetY > 0) {
             // 向下滑动
             direction = 1;
+            console.log('向上滚动');
         } else {
             // 向上滑动
             direction = -1;
+            console.log('向下滚动');
         }
         return direction;
     }
@@ -78,7 +80,7 @@ $(document).ready(function() {
                         createHtml(recordData);
                     }
                 } else {
-                    Transsion.showToast('error:出错了。。。')
+                    alert('error:出错了。。。')
                 }
             },
             error: function(err) {

@@ -33,7 +33,7 @@ $(document).ready(function() {
                 invitUrlBox.val('http://www.infinix.com/code=' + code);
                 codeCopy.attr('data-clipboard-text', code)
             } else {
-                Transsion.showToast('error:::出错了。。。')
+                alert('error:::出错了。。。')
             }
         },
         error: function(err) {
@@ -45,17 +45,17 @@ $(document).ready(function() {
     // 复制code
     var codeClipboard = new ClipboardJS('#codeCopy');
     codeClipboard.on('success', function() {
-        Transsion.showToast('复制成功...');
+        console.log('复制成功...');
     })
     codeClipboard.on('error', function() {
-        Transsion.showToast('复制失败...');
+        console.log('复制失败...');
     })
     // 复制url
     var urlClipboard = new ClipboardJS('#urlCopy');
     urlClipboard.on('success', function() {
-        Transsion.showToast('复制成功...');
+        console.log('复制成功...');
     })
     urlClipboard.on('error', function() {
-        Transsion.showToast('复制失败...');
+        console.log('复制失败...');
     })
 })
