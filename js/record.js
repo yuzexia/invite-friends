@@ -4,12 +4,14 @@ $(document).ready(function() {
     var loadEle = $('#loading');
     var noMoreEle = $('.no-more')
     var boxEle = $('#recordBox')
+    var noData = $('#noData')
     var page = 1;
     var limit = 20;
-    // var uid = Transsion.getUserId();
-    var uid = 47491;
-    // var host = Transsion.getBaseUrl();
-    var host = 'http://xclub.pre.transsion.net/';
+    var uid = Transsion.getUserId();
+    // var uid = 2345057;
+    var host = Transsion.getBaseUrl();
+    // var host = 'http://xclub.pre.transsion.net/';
+    var noDataText = Transsion.getNoData();
     var recordData = [];
     // app提示框
     // Transsion.showToast('Incorrect email format');
@@ -78,9 +80,13 @@ $(document).ready(function() {
                     if (_data.list.length) {
                         recordData =  _data.list
                         createHtml(recordData);
+                    } else {
+                        noData.show();
+                        // noData.find('p').text('没有数据了。。。')
+                        noData.find('p').text(noDataText);
                     }
                 } else {
-                    alert('error:出错了。。。')
+                    Transsion.showToast('error')
                 }
             },
             error: function(err) {
